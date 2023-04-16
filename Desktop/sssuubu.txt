@@ -1,0 +1,77 @@
+grafana is visualization platform  by using that users can build multiple dashboards into single dahboard
+users can apply differnt kind of filter to dashboard like graph,stat,gauge
+
+grafana can use with diff kind of oper sys..here i have installed grafana in ubuntu
+so here i have already installed that so now i am going to check the status by giving this command
+sudo systemctl grafana-server.service now grafana is in active state 
+grafana support port 3000 by default..now it is connected with local host
+now i just connect it with my server 
+by giving  this command ip r
+now it is just connected with my server 
+
+
+so this is dashboard of grafana ..
+before creating dashboard we need to create data source..
+here i use sql influxdb cloudwatch database..we can also add database
+first we are going to create datasource..now i am going to tell about influxdb
+influxdb is nothing but it is time series database
+store large volumes of time series data and quickly perform real-time analysis on that data.
+no sql..
+i have already installed telegraf and influxdb..
+telegraf is agent used to collect data like cpu,memory ,disk utilization ..we need to install telegraf on the server we are going to monitor.
+telegraf send data to influxdb..influxdb store the data from telegraf..
+using grafana we can query the data and visualize..
+now i give the name of datasource
+influxdb support port 8086 by default..here influxdb and telegraf both are installed on same server..
+here i give databse name as telegrf..click save and test ..now dbase connecton is ok..
+here i have already created dbord of influxdb with graph ,stat ,gauge..
+from query we need to choose influxdb
+demo influxdb:
+now i am going to find cpu usage by users:
+from autogen cpu 
+select field(usage _user)mean()---basically avg
+groupby time($_interval)tag(host)
+alias by $tag_host
+
+
+same procedure for sql..for sql i have create one table and i give random values in that table
+sql support port 3306 by default..
+now i am going to find max cpu utilization
+from metrics time column DT 
+select column:cpu aggfun max alias:cpu_max
+select column:idle aggfun max alias:min_idle
+group by time(
+min cpu utilization
+
+
+for cloudwatch i create one user in aws ...i give access key and secret access key ..save test
+query nee to choose cloudwatch..give region 
+
+
+now we are going to create alert..if this limit reaches above this alert came to email..
+
+
+
+
+sql
+max cpu utili:
+from metrics time column DT 
+select column:cpu aggfun max alias:cpu_max
+select column:idle aggfun max alias:min_idle
+group by time(
+min cpu utilization
+
+demo influxdb:
+cpu usage by users:
+from autogen cpu 
+select field(usage _user)mean()---basically avg
+groupby time($_interval)tag(host)
+alias by $tag_host
+
+
+alerts
+from autogen cpu where host=subbu-virtual-machine
+select filed(usage sys)max()
+group by time(1m)fill value(null)
+
+

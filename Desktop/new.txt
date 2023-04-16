@@ -1,0 +1,197 @@
+https://github.com/thamarai866/mine.git
+
+https://www.middlewareinventory.com/blog/jenkins-tomcat-deploy-deploying-application-tomcat-using-jenkins/
+
+
+jakarta.mail.AuthenticationFailedException: 535-5.7.8 Username and Password not accepted.
+
+docker credentials:
+subbu1
+vaishnavi457
+
+https://github.com/ashokitschool/maven-web-app.git
+JAVA_HOME
+C:\Program Files\Java\jdk-17.0.6
+MAVEN_HOME
+C:\Program Files\Maven\apache-maven-3.8.7
+%MAVEN_HOME%\bin
+def MAVEN_HOME = tool name: "%MAVEN_HOME%\bin", type: "maven"
+        def mavenCMD = "${MAVEN_HOME}/bin/mvn"
+
+C:\Program Files\Maven\apache-maven-3.8.7\bin\mvn  
+sh "mvn -Dmaven.test.failure.ignore=true clean package"
+
+
+pipeline{
+agent any
+tools {
+maven 'MAVEN 3.8.6'
+}
+stages {
+stage('Build') {
+steps {
+git credentialsId: 'github', url: 'https://github.com/ashokitschool/maven-web-app.git'
+sh "mvn clean package "
+archive 'target/*.jar'
+}
+}
+}
+
+}
+
+
+node{
+   tools{
+       maven 'MAVEN'
+   }
+    stage('Clone repo')
+    {
+        git credentialsId: 'github', url: 'https://github.com/ashokitschool/maven-web-app.git'
+    }
+    stage('Maven Build')
+    {
+        def mavenHome = tool name: "C:/Program Files/Maven/apache-maven-3.8.7",type: "maven"
+        def mavenCMD = "${mavenHome}/bin/mvn"
+        sh "mvn -Dmaven.test.failure.ignore=true clean package"
+    }
+
+}
+
+
+
+
+
+
+
+
+
+subbu2
+
+correct:
+
+
+pipeline
+{
+	agent any
+	tools
+	{		
+		maven "MAVEN_HOME"
+	}
+	stages {
+		stage('Build') {
+			steps {
+				git 'https://github.com/ashokitschool/maven-web-app.git'
+                	
+			      bat "mvn -Dmaven.test.failure.ignore=true clean package"
+				 }
+       
+				 post{
+            			success{
+          
+              				junit '**/target/surefire-reports/TEST-*.xml'
+             			    archiveArtifacts 'target/*jar'
+					}
+				}
+			}
+		}
+}
+				
+
+
+https://github.com/ajautomation/PassParametersRunTimeViaMVN
+cd C:\sonarqube-9.9.0.65466\sonarqube-9.9.0.65466\bin\windows-x86-64
+StartSonar
+
+
+sonarqube
+usename:admin
+pass:Subbu@1999
+sqa_b08d76bdb1b43954c6bfcefca453f23d18d36a16  token
+
+	junit allowEmptyResults: true,'**/target/surefire-reports/TEST-*.xml'
+             			    archiveArtifacts 'target/*jar'
+
+junit allowEmptyResults: true, testResults: '**/test-results/*.xml'
+
+
+
+ 192.168.254.1
+
+
+stage('code review){
+	withSonarQubeEnv('Sonar-Server-9.9){
+		def mavenHome = tool name: "Maven-3.8.7",
+		def mavenCMD = "${mavenHome}/bin/mvn"
+		sh "${mavenCMD} sonar:sonar"
+
+
+with maven git 
+pipeline
+{
+	agent any
+	tools
+	{		
+		maven "MAVEN_HOME"
+	}
+	stages {
+		stage('Build') {
+			steps {
+				git 'https://github.com/ashokitschool/maven-web-app.git'
+                	
+			      bat "mvn -Dmaven.test.failure.ignore=true clean package"
+				 }
+       
+				 post{
+            			success{
+          
+              			junit allowEmptyResults: true, testResults: '**/test-results/*.xml'
+
+					}
+				}
+			}
+		}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+pipeline
+{
+	agent any
+	tools
+	{		
+		maven "MAVEN_HOME"
+	}
+	stages {
+		stage('Build') {
+			steps {
+				git 'https://github.com/ashokitschool/maven-web-app.git'
+                	
+			      bat "mvn -Dmaven.test.failure.ignore=true clean package"
+				 }
+       
+				 post{
+            			success{
+          
+              			junit allowEmptyResults: true, testResults: '**/test-results/*.xml'
+
+					}
+				}
+			}
+		}
+}
+			
+
+https://github.com/toolsqa17061989/SetupBuildJob.git
+
+
+target/01-maven-web-app/
+				

@@ -1,0 +1,88 @@
+Linux is a free and open source operating system based on the Unix kernel. While Ubuntu is just a distribution of Linux.
+Ubuntu is a Linux based Operating System and belongs to the Debian family of Linux
+.
+what is localhost?
+to test programs and web applications. 
+localhost is a hostname that refers to the current computer used to access it.
+ 3000 is the port number it will communicate on.
+If you access "http://localhost" in the browser, the request will not be forwarded to the internet through the router, 
+but will instead remain in your own system. Localhost has the IP address 127.0. 0.1, which refers back to your own server.
+
+
+influxdb:
+InfluxDB is purpose-built for time series data.
+InfluxDB is designed to store large volumes of time series data and quickly perform real-time analysis on that data.
+no sql 
+
+
+
+we have web application 
+web application --host on 2 servers
+servers in multiple location
+manualy doing is very difficult--always have 2 team 
+if server down means alert not come immediately
+to avoid this issue ci/cd pipeline created..
+contionous moni--grafana promrthus--any issue occurs --mail send
+
+
+
+
+
+we host one app in virtual machine---promethus--time series--promql language-- fetch the data from data producing sevrr---pull data from server---one is metrics,logs
+metrics--one server has capacity --cpu --cpu have capacity
+log--temperature sensor--temperature generate
+pressure sensor --produce sensor
+datas stored in data source
+not actual database
+to store monitorind data
+ It comprises several monitoring tools useful in a DevOps culture, such as alerting, saving time series on local disks or memory, and displaying data graphically (with Grafana)
+
+query the data stored in data store ---graph --3 server for one application
+3 server up 3 server down..
+both are open source 
+
+splunk
+collect data and help to analyze data in diff ways
+uses indexes to store data, and so does not require a separate database to store its information.
+collect, index, organize, search and analyze any type of time-series data using Amazon Web Services (AWS).
+
+dome9
+protect multiple cloud environments by combining cloud-agnostic policy automation with cloud-native security capabilities.
+
+kibana.
+
+ open-source analytics and visualization tool that was created particularly to interact with Elasticsearch. 
+The most common uses of Kibana are searching, viewing, and interacting with data stored internally in Elasticsearch indices.
+
+In Kibana, advanced data analysis and visualization may be accomplished with ease by using charts, tables, and maps.
+
+
+
+
+
+
+sql
+max cpu utili:
+from metrics time column DT 
+select column:cpu aggfun max alias:cpu_max
+select column:idle aggfun max alias:min_idle
+group by time(
+min cpu utilization
+
+demo influxdb:
+cpu usage by users:
+from autogen cpu 
+select field(usage _user)mean()---basically avg
+groupby time($_interval)tag(host)
+alias by $tag_host
+
+
+alerts
+from autogen cpu where host=subbu-virtual-machine
+select filed(usage sys)max()
+group by time(1m)fill value(null)
+
+
+
+
+

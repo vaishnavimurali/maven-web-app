@@ -1,0 +1,12 @@
+ CREATE USER 'grafana'@'localhost' IDENTIFIED BY 'grafana';
+ CREATE USER 'grafana'@'localhost' IDENTIFIED BY 'Grafana@2020';
+
+
+DROP USER 'grafana'@'localhost';
+
+CREATE USER grafana'@'localhost' IDENTIFIED BY "
+
+
+Grafana@2020";
+
+mysql://grafana:"Grafana@2020"@localhost:3306/grafanadb

@@ -1,0 +1,8 @@
+1.installing grafana in ubuntu 
+2.connecting grafana localhost
+3.creating my private server 
+4.installing database in ubuntu(mysql,influxdb)
+5.installing telegraf
+6.create datasource  of mysql and influxdb in grafana dashboard and connect it with server.
+7.creating dashboard for cpu ,memory utiliztion of influxdb and mysql.
+8.creating alerts for cpu and memory utilization of influxdb.

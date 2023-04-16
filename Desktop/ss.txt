@@ -1,0 +1,21 @@
+Grafana is well suited for working with time-series, application monitoring, and server monitoring.
+Grafana is an open source interactive data-visualization platform, developed by Grafana Labs,
+ which allows users to see their data via charts and graphs that are unified into one dashboard (or multiple dashboards!) for easier interpretation and understanding.
+
+
+
+
+What is InfluxDB used for?
+InfluxDB is an open-source time series database (TSDB) developed by the company InfluxData. 
+It is written in the Go programming language for storage and retrieval of time series data in fields 
+such as operations monitoring, application metrics, Internet of Things sensor data, and real-time analytics.
+
+
+Time series databases
+
+Time series data is the best type of data for monitoring and visualizing in Grafana. 
+One of the most popular databases for storing time-series data. 
+InfluxDB is a part of the TICK-stack: the collection of tools for collecting, storing, and analyzing time-series data
+
+What is InfluxDB and Grafana?
+InfluxDB is a time series database built specifically for storing time series data, and Grafana is a visualization tool for time series data

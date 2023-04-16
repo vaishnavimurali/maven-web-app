@@ -1,0 +1,34 @@
+sudo yum install -y grafana-6.7.3-1.x86_64.rpm
+
+
+
+sudo systemctl enable grafana
+sudo init enable grafana
+
+
+sudo apt install grafana-enterprise-9.1.6-1.x86_64.rpm
+
+
+Grafana is a multi-platform open source analytics and interactive visualization web application. 
+It provides charts, graphs, and alerts for the web when connected to supported data sources.
+Grafana benefits include: Customizable dashboards are feature-rich and can be configured to display data from a wide range of databases using visualization tools
+such as heatmaps, histograms, and charts. The platform is flexible and easy to use. Native support of a broad range of databases.
+Companies use Grafana to monitor their infrastructure and log analytics, predominantly to improve their operational efficiency. 
+Dashboards make tracking users and events easy as it automates the collection, management, and viewing of data.
+Grafana's design for caters to analyzing and visualizing metrics such as system CPU, memory, disk and I/O utilization.
+
+
+
+1.why to learn linux?
+linux is easy compare to windows..
+h/w utilization  
+  
+
+open source web app for visualizing data  
+allows to build chart graph and dashboards of data that we want to visualize
+
+
+
+2 category of visualizing data
+metric--cpu load current m/y usage ,temperature
+logs---time stamp 

@@ -1,0 +1,115 @@
+is an open-source container-orchestration tool designed by Google.
+Kubernetes services provide load balancing and simplify container management on multiple hosts
+load balancing and simplify container management on multiple hosts.
+Kubernetes keeps track of your container applications that are deployed into the cloud. It restarts orphaned containers, shuts down containers when they're not1
+ being used, and automatically provisions resources like memory, storage, and CPU when necessary
+
+
+The API (application programming interface) server determines if a request is valid and then processes it
+user communicate through this..
+
+schedular:
+The Kubernetes scheduler is a control plane process which assigns Pods to Nodes.
+
+controller manager:
+cluster related tasks are managed by cluster manager 
+
+etcd
+all key values are stored here 
+cluster information like 
+all key values are stored here
+etcd is a consistent and highly-available key value store used as Kubernetes' backing store for all cluster data.
+Most notably, it manages the configuration data, state data, and metadata for Kubernetes, the popular container orchestration platform
+Etcd is an integral part of the Kubernetes control plane. Etcd stores Kubernetes cluster configuration and state data such as the number of pods, their state, namespace, etc. It also stores Kubernetes API objects and service discovery details.
+
+
+kubelet--share info with master
+kubeproxy--port forwading
+
+create multiple container into pods..
+add con in pods
+
+
+user interface---dashboard
+cli---kubectl
+
+
+
+
+create one master node and two worker nodes:
+using minikube yum like that
+first create 
+one master two worker node 
+
+in all nodes do this process:
+sudo swapoff -a
+free -m
+sudo apt-get update && sudo apt-get install -y apt-transport-https curl ---in all nodes   
+add key using curl command:
+sudo curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -    -- in all nodes
+
+download official repo of kube:
+now i am going to use xenial package
+sudo apt-add-repository "deb http://apt.kubernetes.io/ kubernetes-xenial main"
+lsb_release -a
+sudo apt-get update && sudo apt-get install -y kubelet=1.20.0-00 kubeadm=1.20.0-00 kubectl=1.20.0-00 docker.io
+sudo systemctl start docker && sudo systemctl enable docker
+
+cluster initialization:in master only
+sudo kubeadm init
+ip a
+sudo kubeadm init --apiserver-advertise-address (give ip address in wich cluster needs to connect) --pod-network-cidr=172.16.0.0/16
+now master node is ready
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+kubectl get nodes
+copy url given:
+kubernetes.io/docs/concepts/cluster-administration/addons/
+click flannel
+copy from kubectl apply to flannel.yml
+kubectl get nodes 
+go to worker 1:
+sudo systemctl start docker && sudo systemctl enable docker
+give (sudo kubeadm join  to sha256 :jhjtrththy like this)command visible in master node 
+go to worker 2:
+sudo systemctl start docker && sudo systemctl enable docker
+give (sudo kubeadm join  to sha256 :jhjtrththy like this)command visible in master node 
+
+go to master and give
+kubectl get nodesnow kmaster ,docker worker1 and dock worker 2 is visible
+kubectl describe node docker-worker1
+
+
+
+
+go to google type kubernetes resource objects:
+click first link
+create file with .yaml extension
+copy syntax
+
+create yaml file and apply
+open kubeapi reference in google
+
+
+kubectl get nodes
+kubectl delete svc
+kubectl help
+kubectl get deploy
+kubectl get svc
+vim nginx-basic.yaml
+copy and paste yaml file 
+name:deployment-nginx
+rep:2
+kubectl apply -f nginx-basic.yaml
+created..
+kubectl get deploy
+kubectl get pods
+2 pods running 
+kubectl delete pod (name of pod)
+kubectl get pods
+if one pod  delete automatically another created  
+
+
+
+
+
