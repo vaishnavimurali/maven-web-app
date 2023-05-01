@@ -1,0 +1,22 @@
+ticketing --enter details , comapny id,what issue he calling,what are steps performed by us
+
+
+
+
+integral part of cus relationship managementa
+interaction with customer
+what is error msg how long perform this issue
+
+
+why company use ticketing tools?
+we know how many incidents got today,how many resolved 
+how many incident pending
+what are most issue employee getting
+
+
+most used 
+
+servicenow
+remedy
+zendesk
+live agent

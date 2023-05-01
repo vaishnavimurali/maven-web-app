@@ -1,0 +1,68 @@
+1.create vpc using cloudformation
+2.create iam role ekscluster
+3.in eks cluster create cluster and provide details of vpc and iam role
+3.create one ec2 instnace 
+
+install kubectl in that instnace and install aws cli
+so only we need to connect with cluster
+
+aws eks list-clusters
+our cluster need to connect with control plane
+update name and region of created cluster
+aws eks update-kubeconfig --name EKS-Cluster --region ap-south-1
+
+now our cluster is connectd to ec2
+now our contro plane and kubectl is ready,next we need to create worker node
+
+create iamrole for eks worker node(usecase as ec2) with policies
+
+1.Amazoneksworkernodepolicy
+2.amazoneks_cni_policy
+3.amazonec2containerregistryreadonly
+eksworkernode role is created
+
+join node with cluster 
+go to ekscluster 
+compute
+add node gropu
+name---
+role workernoderole
+instamce size
+create
+workernodes are create and attache to cluster
+
+kubectl get nodes
+kubectl get pods --all-namespaces
+
+
+vi java-webapp-deploy.yml
+copy and paste yml file
+kubectl apply -f java-webapp-deploy.yml
+now loadbal is created in aws..cluster created this lbakcer
+kubectl get poda 
+one pod is created
+kubectl get svc
+kubectl get deployment
+kubectl get pods -o wide
+copy dns of lbal and paste in browser
+ docker container created inside the pod.pods are accessicl within the cluster by cluster.we need to expose the pods for outside aceess.
+we have kubernets service to expose the pods for outside access.
+there are 3 types of service avaible in kubernetes.
+clusterip
+nodeport
+loadbalancer
+
+
+
+
+codepipeline
+
+codecommit
+codebuild --build and test cases--compile sourcr code
+codedeploy
+
+
+
+
+ 
+

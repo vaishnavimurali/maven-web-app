@@ -1,5 +1,9 @@
 provider "aws" {
-  region     = "us-west-2"
-  access_key = "AKIAQTZAUCGJXBRHCT6G"
-  secret_key = "QpW8oibEkZ8oX7mp19XHPkvta9cnoB37Z5jps2S6"
+  region = "us-east-1"
+
+  access_key = "AKIAUFJG6ALWVQ55DOVO"
+  secret_key = "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"
+}
+resource "aws_vpc" "main" {
+  cidr_block = "10.0.0.0/16"
 }

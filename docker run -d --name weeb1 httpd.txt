@@ -1,0 +1,37 @@
+docker run -d --name weeb1 httpd
+docker exex -it web2 /bin/sh --login to container
+
+
+
+
+
+
+from----used to specify valid docker image
+label -----"env" ="dev"
+expose---application listen to which port
+Add---transfer files---->tar files....copy files and send to container in extarcted form
+copy-->only copy the file
+run---->exeute command on top of current image
+run yuum update && sudo apt update
+
+CMD---change our container to executable conatiner----->CMD  ping.google.com
+entrypoint---->
+
+volume-->mount additional voulmes to container
+volume /data
+USER ---> USER subbu
+WORKDIR -->WORKDIR /APP/
+
+ENV--->To set env variable--->avaibel during build and afetr image build
+ENV app_version 2.0
+ARG ----> to set env varibale---.only at time of image build
+ARG TMP_VER 2.0 
+
+https://youtu.be/AYAh6YDXuho
+
+https://medium.com/@javatechie/kubernetes-tutorial-run-deploy-spring-boot-application-in-k8s-cluster-using-yaml-configuration-3b079154d232
+
+
+Zoom: https://smartbear.zoom.us/j/91966132137
+
+

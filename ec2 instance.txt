@@ -1,0 +1,11 @@
+ec2 instance
+java
+jenkins
+chnage to jenkins user
+suo su -jenkins
+install docker 
+add jenkins user to docker 
+restart instance
+install aws cli
+install eksctl
+create cluster

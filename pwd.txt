@@ -1,0 +1,22 @@
+pwd
+cd
+mkdir
+rmdir
+gedit
+cp
+mv
+ls
+head 
+tail
+grep
+tac
+ping
+hostname
+hostname -i
+ip a
+chmod u=r file.txt
+chmod u=w file.txt
+nl file.txt
+wc file.txt
+
+https://youtu.be/rFwdniyo0CM

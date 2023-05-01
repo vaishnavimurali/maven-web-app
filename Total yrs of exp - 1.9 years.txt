@@ -1,0 +1,153 @@
+Total yrs of exp - 1.9 years
+Rel yrs exp in AWS - 1.9 years
+Rel yrs exp in Code (IaC) tools such as Terraform/ CloudFormation / CHEF: 1.5 years
+Rel Yrs of Exp in Dockers /Kubernates - 1.5 years
+Rel yrs of Exp in Python / Ruby /Golang (Programming Lang): 1.5 years
+Rel Yrs of Exp in Scripting : 1 year
+Knowledge on Cloud Security (YES /NO): Yes
+CTC (fixed+ Esops/ Stocks+Bonus) : 4.5 lpa
+Exp CTC : 5/6 lpa
+Notice Period : Immediate
+
+https://youtu.be/SpKqpZW0JUU
+https://youtu.be/lqOJIenrwp0
+https://youtu.be/04oITjdLtho
+
+knife cookbook uplod sample
+knife bootstrap ip(mysysip ) --ssh-user root --ssh-password (which i kept like this Subbu@1999) --node-nmae chef node
+
+
+kubernetes:-
+
+etcd cluster --->key value storage which is used to store the kubernetes cluster data
+kube-api-server ---->serve as frontend to cluster
+kube-controller-manager  ---> Runs a number of distinct controller process in background ex;app need for 4 replicas it create 4 replica...
+cloud-controller-manager ---> i use eks with aws ,clound controlleer manager responsible for setup infrastructure.
+kube-schedular ----> helps schedule the pods on various nodes bassd on resource utilization.
+example:if the application needs 1gb of m/y and 2 cpu cores then the pods for that application
+will be scheduled on node with atleast those resources.
+
+worker node compnents:
+kubelet  --> it ensures that pods and their containers are healthy and running in desired state.It reports to the master on health of host where it is running.
+kube -proxy --->forward request from outside of internet to pods/container..n/w related works
+
+
+kubectl --- > command line tool..ineract with kube-apiserver
+
+pod--- one or more containers..one pod runs with  one container
+service----pods are volatile...it is gateway...it does load balancing
+deployment ----> above the pod..
+
+pod:yaml file
+
+
+apiVersion: v1      ---syntax 
+kind: Pod
+metadata:
+  name: nginx
+spec:
+  containers:
+  - name: nginx  ---light weight web server
+    image: nginx:1.14.2
+    ports:
+    - containerPort: 80
+
+sevices yaml file 
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-nginx
+  labels:
+      run: my-nginx
+spec:
+  ports:
+    - protocol: TCP
+      port: 80
+    selector:
+       run:my-nginx
+
+deployment yaml file:
+
+
+apiVersion: apps/   v1
+kind: Deployement
+metadata:
+  name: my-nginx
+spec:
+  selector:
+    matchLabels:
+       run : my-nginx
+  replicas : 2
+  template:
+    metadata:  
+      labels:
+         run : my-nginx
+spec:
+   containers:
+   -name: my-nginx
+    image: nginx
+    ports:
+   - containerport: 80
+
+create cluster:
+eksctl create cluster -f eks-cluster-create.yaml
+
+
+
+
+kubernets interview questions:
+
+
+1.kubernetes is container orchetration tool
+it has done auto scaling
+it has gui  
+it has automatic roll back to previous or nect versions
+ third party tools like grafana , promethus for logging and monitoring 
+  can share storage volumes with container in same pod
+
+
+2.docker swarm
+ orchrstrate simple docker containers  
+ cant do  auto scaling
+ not provide gui
+ cannote deploy automatic rollback 
+ require third party tools like elk stack for logging and monitoring  
+  can share storage volume with any container easily 
+
+3.kubelet:
+  kubelet  --> it ensures that pods and their containers are healthy and running in desired state.It reports to the master on health of host where it is running.
+
+4kubectl:
+  command line tool
+  deploying and managing application on kubernets
+  interaction with cluster throug kubectl --creating,updating and deleting pods info through kubectl
+
+5.diff services in kubenetes
+cluster ip service
+node port service
+external name
+load balancer service
+
+6.how to set static ip for kubernetes load balancer
+by changing dns records whwnever kubernetes master assign new ip address
+
+7.etcd
+etcd cluster --->key value storage which is used to store the kubernetes cluster data
+it allows nodes in cluster to read and write data
+it represent state of cluster at specific moment in time , center management for cluster coordination
+
+
+8.replication controller
+latest version of kubernetes
+do not have selectors in spec  
+replica set
+have selectors in spec 
+
+9.kubeproxy
+
+
+
+
+
+

@@ -1,0 +1,27 @@
+linux commands
+dictonay
+terraform modules
+how we login to instance if we lost pem file
+diff b/w ebs and s3
+how we change instance type and ami after instance creation
+what happen if terraform state file is deleted
+state log files in terraform
+command to find current container status (not ps command he said)
+command to find docker logs
+create sec grp in terraform
+i have one server cpu utilization got exceed what is method to recover the server(not backup,start restart like that)
+why boto3 is used in python
+expplain vpc cidr
+port number of http ssh apache sql
+diff b/w sql and aurora
+python basic coding
+docker command to run the container with port number
+ controller manager in kubernetes
+what is ingress in kubernetes
+cloudwatch with sns
+terraform sgroup
+dockker file instructions
+docker commands need to be tharoug
+
+diff b/w ami and ebs snapshot
+how to connect two ec2 instance

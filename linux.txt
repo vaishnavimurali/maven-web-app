@@ -1,0 +1,71 @@
+1.The ifconfig command in Linux is used to view and configure network interfaces on a Linux system. It provides information about the network interface configuration, including IP addresses, netmasks, MAC addresses, and other network-related information.
+ ifconfig
+ ifconfig eth0
+
+2.The nslookup command is a network administration tool used in Linux and other operating systems to query the Domain Name System (DNS) to obtain information about domain names, IP addresses, and other related information.
+For example, to obtain the IP address of the domain example.com, you can use the following command:
+nslookup example.com
+This will query the DNS server and return the IP address of example.com.
+
+
+3.The scp command is used to securely copy files between hosts on a network using the Secure Shell (SSH) protocol. It is typically used for copying files to or from a remote host, and provides a secure and encrypted way to transfer files over a network.
+To copy a file from a remote host to the local host, you can use the following command:
+scp username@remote:/path/to/source/file /path/to/destination/file
+To copy a file from the local host to a remote host, you can use the following command:
+scp /path/to/source/file username@remote:/path/to/destination/file
+For example, to copy an entire directory from the local host to a remote host while preserving file attributes, you can use the following command:
+scp -rp /path/to/source/directory username@remote:/path/to/destination/directory
+
+4.The ssh command is used to connect to a remote host securely using the SSH protocol. It allows you to securely log in to a remote host, execute commands on the remote host, and transfer files between hosts.
+ssh username@hostname
+Here, username is the username used to connect to the remote host, and hostname is the hostname or IP address of the remote host.
+
+
+
+5.free
+
+The free command in Linux is used to display information about the system's memory usage, including the total amount of available, used and free memory, as well as the amount of memory used for buffers and cache.
+
+-b or --bytes: display memory usage in bytes
+-k or --kilobytes: display memory usage in kilobytes (default)
+-m or --megabytes: display memory usage in megabytes
+-g or --gigabytes: display memory usage in gigabytes
+-t or --total: display a line with the total amount of memory
+
+
+
+6.top
+The top command in Linux is used to display real-time information about the system's processes and their resource usage, including CPU usage, memory usage, and other system metrics.
+
+-d or --delay: specify the update delay in seconds (default is 3 seconds)
+-p or --pid: display information only for the specified process IDs
+-u or --user: display information only for the specified user(s)
+-o or --sort: specify the field to sort by (default is CPU usage)
+For example, to sort the list of processes by memory usage instead of CPU usage, you can use the following command:
+top -o RES
+
+
+7.The df -h command in Linux is used to display information about the available disk space on the file system. It displays information about the file system usage, including the total size, used space, available space, and the mount point of each file system
+
+The -h option displays disk space usage in a more human-readable format, using units such as "GB" or "MB" instead of bytes.
+
+For example, to display disk space usage for all mounted file systems in a human-readable format, you can use the following command:
+
+df -h
+
+This will display a list of all mounted file systems, including their total size, used space, available space, and mount point, in a human-readable format.
+
+
+8.The ping command in Linux is used to test the connectivity and availability of a network host or IP address.The ping command is a useful tool for troubleshooting network connectivity issues and testing network performance. It can be used to determine if a network host is reachable and responding to ICMP requests, and to measure the round-trip time for ICMP packets.
+
+ping -c 5 -v google.com
+
+-c or --count: specify the number of ping requests to send (default is infinite)
+-i or --interval: specify the interval between ping requests in seconds (default is 1 second)
+-s or --size: specify the size of the ICMP echo request packet in bytes (default is 56 bytes)
+-t or --ttl: specify the Time to Live (TTL) value for the ICMP packets (default is 64)
+-v or --verbose: display more detailed output
+
+
+
+9.

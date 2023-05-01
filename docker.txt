@@ -1,0 +1,86 @@
+1.find version :docker --version
+
+2.pull docker image from dockerhub: docker pull imagename
+
+3.list doc images:docker images
+
+4.run doc image: docker run -it -d httpd
+
+5.docker ps
+
+6.to see stop or exited:docker ps -a
+
+7.Access the docker container and run commands inside the container
+docker exec -it 09ca6feb6efc bash
+ls
+bin  build  cgi-bin  conf  error  htdocs  icons  include  logs                modules
+
+8.remove container:docker rm 9b6343d3b5a0
+
+9.Remove the docker image with the docker image id:docker rmi fce289e99eb9
+
+10.Restart the docker container with container id :docker restart 09ca6feb6efc
+
+11.Stop a container with container id :docker stop 09ca6feb6efc
+
+12.docker starts the docker container with container id :docker start 09ca6feb6efc
+
+13.Login into docker hub. You will be asked your docker hub credentials to log in:docker login
+
+14.The following command in docker lists the details of all the network in the cluster:docker network ls
+
+15.Get detailed information about docker installed on the system including the kernel version, number of containers and images, etc.:docker info
+
+16.Copy a file from a docker container to the local system:sudo docker cp 09ca6feb6efc:/usr/local/apache2/logs/httpd.pid /home/geekflare/
+
+17.Shows the history of a docker image with the image name  : docker history httpd
+
+18.Search for a docker image on dockerhub with the name: docker search hadoop
+
+19.Create a volume which docker container will use to store data:docker volume create
+
+20.command is used for remove all stopped containers, unused networks, build caches, and dangling images? :docker system prune
+
+21.What command is used for stopping a running container? docker kill <conid>
+
+docker:
+Docker is a very popular and powerful open-source containerization platform that is used for building, deploying, and running applications. Docker allows you to decouple the application/software from the underlying infrastructure.
+
+
+doc images:
+They are executable packages(bundled with application code & dependencies, software packages, etc.) for the purpose of creating containers
+
+doc container:
+docker containers consist of applications and all their dependencies.
+
+
+doc compose:
+ docker-compose is used for creating multiple containers, host them and establish communication between them. For the purpose of communication amongst the containers, ports are exposed by each and every container.
+
+
+What is docker image registry?
+A Docker image registry, in simple terms, is an area where the docker images are stored. Instead of converting the applications to containers each and every time, a developer can directly use the images stored in the registry.
+This image registry can either be public or private and Docker hub is the most popular and famous public registry availabl
+
+What is a Docker Hub?
+It is a public cloud-based registry provided by Docker for storing public images of the containers along with the provision of finding and sharing them.
+The images can be pushed to Docker Hub through the docker push command.
+
+
+
+List the most commonly used instructions in Dockerfile?
+FROM: This is used to set the base image for upcoming instructions. A docker file is considered to be valid if it starts with the FROM instruction.
+LABEL: This is used for the image organization based on projects, modules, or licensing. It also helps in automation as we specify a key-value pair while defining a label that can be later accessed and handled programmatically.
+RUN: This command is used to execute instructions following it on the top of the current image in a new layer. Note that with each RUN command execution, we add layers on top of the image and then use that in subsequent steps.
+CMD: This command is used to provide default values of an executing container. In cases of multiple CMD commands the last instruction would be considered.
+
+
+CMD command provides executable defaults for an executing container. In case the executable has to be omitted then the usage of ENTRYPOINT instruction along with the JSON array format has to be incorporated.
+ENTRYPOINT specifies that the instruction within it will always be run when the container starts. 
+This command provides an option to configure the parameters and the executables. If the DockerFile does not have this command, then it would still get inherited from the base image mentioned in the FROM instruction.
+- The most commonly used ENTRYPOINT is /bin/sh or /bin/bash for most of the base images.
+
+
+
+
+
